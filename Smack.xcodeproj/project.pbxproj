@@ -18,6 +18,7 @@
 		75DD6F3E1F57ADFE00F9F45D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD6F3D1F57ADFE00F9F45D /* GradientView.swift */; };
 		75DD6F431F57D15C00F9F45D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD6F421F57D15C00F9F45D /* Constants.swift */; };
 		75DD6F451F58484000F9F45D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD6F441F58484000F9F45D /* LoginVC.swift */; };
+		75DD6F471F584AC100F9F45D /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD6F461F584AC100F9F45D /* CreateAccountVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		75DD6F3D1F57ADFE00F9F45D /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		75DD6F421F57D15C00F9F45D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		75DD6F441F58484000F9F45D /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		75DD6F461F584AC100F9F45D /* CreateAccountVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		A0F306B25FDAF3041EB1F072 /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 				75DD6F391F564EB600F9F45D /* ChatVC.swift */,
 				75DD6F3B1F564EC500F9F45D /* ChannelVC.swift */,
 				75DD6F441F58484000F9F45D /* LoginVC.swift */,
+				75DD6F461F584AC100F9F45D /* CreateAccountVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			files = (
 				75DD6F3A1F564EB600F9F45D /* ChatVC.swift in Sources */,
 				75DD6F3E1F57ADFE00F9F45D /* GradientView.swift in Sources */,
+				75DD6F471F584AC100F9F45D /* CreateAccountVC.swift in Sources */,
 				75DD6F451F58484000F9F45D /* LoginVC.swift in Sources */,
 				75DD6F201F54FEBC00F9F45D /* AppDelegate.swift in Sources */,
 				75DD6F431F57D15C00F9F45D /* Constants.swift in Sources */,
