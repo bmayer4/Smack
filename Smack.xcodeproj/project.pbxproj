@@ -20,6 +20,7 @@
 		75DD6F451F58484000F9F45D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD6F441F58484000F9F45D /* LoginVC.swift */; };
 		75DD6F471F584AC100F9F45D /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD6F461F584AC100F9F45D /* CreateAccountVC.swift */; };
 		75DD6F4B1F58EEF700F9F45D /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD6F4A1F58EEF700F9F45D /* AuthService.swift */; };
+		75DD6F4D1F5A5A8C00F9F45D /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD6F4C1F5A5A8C00F9F45D /* RoundedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		75DD6F441F58484000F9F45D /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		75DD6F461F584AC100F9F45D /* CreateAccountVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		75DD6F4A1F58EEF700F9F45D /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		75DD6F4C1F5A5A8C00F9F45D /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		A0F306B25FDAF3041EB1F072 /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				75DD6F3D1F57ADFE00F9F45D /* GradientView.swift */,
+				75DD6F4C1F5A5A8C00F9F45D /* RoundedButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75DD6F3A1F564EB600F9F45D /* ChatVC.swift in Sources */,
+				75DD6F4D1F5A5A8C00F9F45D /* RoundedButton.swift in Sources */,
 				75DD6F3E1F57ADFE00F9F45D /* GradientView.swift in Sources */,
 				75DD6F471F584AC100F9F45D /* CreateAccountVC.swift in Sources */,
 				75DD6F4B1F58EEF700F9F45D /* AuthService.swift in Sources */,
