@@ -25,6 +25,7 @@ class CreateAccountVC: UIViewController {
         performSegue(withIdentifier: UNWIND, sender: nil)
     }
 
+    //the api flow is register user, login user, create user
     @IBAction func createAccountPressed(_ sender: Any) {
         guard let email = emailTxt.text, emailTxt.text != "" else {
             return
@@ -35,8 +36,14 @@ class CreateAccountVC: UIViewController {
         
         AuthService.instance.registerUser(email: email, password: password) { (success) in
             if success {
-                print("Registered user!")
-            } else {
+                
+                AuthService.instance.loginUser(email: email, password: password, completion: { (success) in
+                    
+                    if success {
+                        print("Logged in user!", AuthService.instance.authToken)
+                    }
+                    
+                })
                 
             }
 
