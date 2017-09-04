@@ -37,5 +37,37 @@ class UserDataService {
         self.avatarName = avatarName
     }
     
+    func returnUIColor(components: String) -> UIColor {
+
+        //the teacher did this a different way, using scanner. I am more comfortable with this way
+        let removeLeftBracket = components.replacingOccurrences(of: "[", with: "")
+        let removeRightBracket = removeLeftBracket.replacingOccurrences(of: "]", with: "")
+        let removeSpaces = removeRightBracket.replacingOccurrences(of: " ", with: "")
+        let colorArray = removeSpaces.components(separatedBy: ",")
+        print(colorArray)
+        guard let r = Double(colorArray[0]) else { return UIColor.lightGray }
+        guard let g = Double(colorArray[1]) else { return UIColor.lightGray }
+        guard let b = Double(colorArray[2]) else { return UIColor.lightGray }
+        guard let a = Double(colorArray[3]) else { return UIColor.lightGray }
+            print(r, g, b, a)
+        
+        let color = UIColor(red: CGFloat(r), green: CGFloat(g), blue: CGFloat(b), alpha: CGFloat(a))
+        
+        return color
+    }
+    
+    func logoutUser() {
+        id = ""
+        avatarColor = ""
+        avatarName = ""
+        email = ""
+        name = ""
+        
+        AuthService.instance.isLoggedIn = false
+        AuthService.instance.userEmail = ""
+        AuthService.instance.authToken = ""
+    }
+    
+    
     
 }
