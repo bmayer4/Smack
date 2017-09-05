@@ -9,6 +9,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Reveal View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -280,6 +285,9 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginPressed:" destination="U0g-uv-6ln" eventType="touchUpInside" id="aHc-yL-iZj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcy-5O-zbZ">
                                 <rect key="frame" x="62.5" y="336" width="250" height="30"/>
@@ -295,9 +303,14 @@
                                     <action selector="createAcctPressed:" destination="U0g-uv-6ln" eventType="touchUpInside" id="MrD-te-AhN"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="B8v-Ie-Cso">
+                                <rect key="frame" x="169" y="215" width="37" height="37"/>
+                                <color key="color" red="0.2901960784" green="0.30196078430000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="B8v-Ie-Cso" firstAttribute="centerX" secondItem="ROP-c5-6kS" secondAttribute="centerX" id="0Mr-Ch-H5X"/>
                             <constraint firstItem="gcy-5O-zbZ" firstAttribute="top" secondItem="01f-YU-O2J" secondAttribute="bottom" id="4bE-Yg-nVF"/>
                             <constraint firstItem="W39-KV-VDd" firstAttribute="trailing" secondItem="ROP-c5-6kS" secondAttribute="trailingMargin" id="70j-4C-2P0"/>
                             <constraint firstItem="01f-YU-O2J" firstAttribute="top" secondItem="nMa-qs-cy6" secondAttribute="bottom" constant="40" id="AjL-i8-9yX"/>
@@ -308,9 +321,13 @@
                             <constraint firstItem="nMa-qs-cy6" firstAttribute="top" secondItem="Meg-Pq-XlT" secondAttribute="bottom" constant="40" id="sbc-wZ-asX"/>
                             <constraint firstItem="W39-KV-VDd" firstAttribute="top" secondItem="y3R-J4-uEA" secondAttribute="bottom" id="tSa-ot-qBC"/>
                             <constraint firstItem="01f-YU-O2J" firstAttribute="centerX" secondItem="ROP-c5-6kS" secondAttribute="centerX" id="uRO-DE-Iet"/>
+                            <constraint firstItem="B8v-Ie-Cso" firstAttribute="centerY" secondItem="ROP-c5-6kS" secondAttribute="centerY" constant="-100" id="yOJ-IE-1ZG"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="passwordTxt" destination="r8B-IM-q2w" id="nv3-CG-y0P"/>
+                        <outlet property="spinner" destination="B8v-Ie-Cso" id="azc-PI-0UJ"/>
+                        <outlet property="usernameTxt" destination="co5-ci-Wux" id="Kch-YM-Egi"/>
                         <segue destination="shv-dn-uJL" kind="show" identifier="toCreateAccount" id="a4h-im-Vgf"/>
                     </connections>
                 </viewController>
@@ -457,13 +474,13 @@
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="gSK-H6-pdm">
-                                <rect key="frame" x="169" y="495" width="37" height="37"/>
+                                <rect key="frame" x="169" y="215" width="37" height="37"/>
                                 <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gSK-H6-pdm" firstAttribute="centerY" secondItem="pGH-bq-lsg" secondAttribute="centerY" constant="180" id="37z-4A-bmp"/>
+                            <constraint firstItem="gSK-H6-pdm" firstAttribute="centerY" secondItem="pGH-bq-lsg" secondAttribute="centerY" constant="-100" id="37z-4A-bmp"/>
                             <constraint firstItem="1Iq-nk-AW4" firstAttribute="centerX" secondItem="pGH-bq-lsg" secondAttribute="centerX" id="5VL-ym-BNg"/>
                             <constraint firstItem="HsE-Go-7HU" firstAttribute="top" secondItem="PQo-tm-Cke" secondAttribute="bottom" constant="8" id="AL5-hd-a3V"/>
                             <constraint firstItem="V2o-6d-1DH" firstAttribute="top" secondItem="80K-H6-mY2" secondAttribute="bottom" constant="20" id="Bck-he-ICU"/>

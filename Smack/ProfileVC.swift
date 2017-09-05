@@ -22,11 +22,6 @@ class ProfileVC: UIViewController {
         super.viewDidLoad()
         
         setupView()
-        
-        print(UserDataService.instance.name)
-        print(UserDataService.instance.avatarName)
-        print(AuthService.instance.userEmail)
-        print("not printing..")
     }
     
     func setupView() {

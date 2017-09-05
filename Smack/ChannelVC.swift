@@ -19,8 +19,23 @@ class ChannelVC: UIViewController {
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 60
         
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
-
+        
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        setupUserInfo()
+    }
+    
+//    override func viewDidAppear(_ animated: Bool) {  //What is the difference betweem this and using notifications?
+//        super.viewDidAppear(true)
+//        
+//        print("view loaded")
+//        print(AuthService.instance.isLoggedIn)
+//        userDataDidChange()
+//
+//    }
 
     @IBAction func loginBtnPressed(_ sender: Any) {
         
@@ -38,11 +53,17 @@ class ChannelVC: UIViewController {
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {}
     
     func userDataDidChange(_ notif: Notification) {
+    //func userDataDidChange() {
+        setupUserInfo()
+    }
+    
+    func setupUserInfo() {
+        
         if AuthService.instance.isLoggedIn {
             print("notification worked")
             loginBtn.setTitle(UserDataService.instance.name, for: .normal)
             userImage.image = UIImage(named: UserDataService.instance.avatarName)
-            
+            print("What im looking for: \(UserDataService.instance.avatarName)")
             let avColor = UserDataService.instance.returnUIColor(components: UserDataService.instance.avatarColor)
             print("avatarcolor from func: \(avColor)")
             userImage.backgroundColor = avColor
@@ -52,6 +73,7 @@ class ChannelVC: UIViewController {
             userImage.image = UIImage(named: "menuProfileIcon")
             userImage.backgroundColor = UIColor.clear
         }
+
     }
 
 
