@@ -8,34 +8,33 @@
 
 import UIKit
 
-class ChannelVC: UIViewController {
+class ChannelVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var userImage: CircleImage!
+    @IBOutlet weak var tableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.delegate = self
  
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 60
         
+        //****This is a listener and set up here which gets called before we even visit this VC, faster than viewDidAppear!
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
         
     }
     
+    //adding this in in case this view isn't instantiated whem ChatVC calls the notification
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
         setupUserInfo()
     }
     
-//    override func viewDidAppear(_ animated: Bool) {  //What is the difference betweem this and using notifications?
-//        super.viewDidAppear(true)
-//        
-//        print("view loaded")
-//        print(AuthService.instance.isLoggedIn)
-//        userDataDidChange()
-//
-//    }
 
     @IBAction func loginBtnPressed(_ sender: Any) {
         
@@ -53,19 +52,17 @@ class ChannelVC: UIViewController {
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {}
     
     func userDataDidChange(_ notif: Notification) {
-    //func userDataDidChange() {
+
         setupUserInfo()
     }
     
     func setupUserInfo() {
         
         if AuthService.instance.isLoggedIn {
-            print("notification worked")
+            print("notification worked from ChannelVC")
             loginBtn.setTitle(UserDataService.instance.name, for: .normal)
             userImage.image = UIImage(named: UserDataService.instance.avatarName)
-            print("What im looking for: \(UserDataService.instance.avatarName)")
             let avColor = UserDataService.instance.returnUIColor(components: UserDataService.instance.avatarColor)
-            print("avatarcolor from func: \(avColor)")
             userImage.backgroundColor = avColor
             
         } else {
@@ -75,7 +72,25 @@ class ChannelVC: UIViewController {
         }
 
     }
+    
+    //required
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MessageService.instance.channels.count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "channelCell", for: indexPath) as? ChannelCell {
+            let chan = MessageService.instance.channels[indexPath.row]
+            cell.configureCell(channel: chan)
+            return cell
+        } else {
+            return ChannelCell()
+        }
+    }
 
 
 }

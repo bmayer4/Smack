@@ -96,10 +96,8 @@ class AuthService {
 //                }
             
             //using SwiftyJSON
-            guard let data = response.data else {
-                return
-            }
-            
+            guard let data = response.data else { return }
+     
             let json = JSON(data: data)
             
             self.userEmail = json["user"].stringValue  //this unwraps it for you, or sets it to empty string

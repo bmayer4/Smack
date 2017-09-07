@@ -141,7 +141,7 @@
                                 <rect key="frame" x="0.0" y="123" width="375" height="429"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tI8-Ud-U3x">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="channelCell" id="tI8-Ud-U3x" customClass="ChannelCell" customModule="Smack" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tI8-Ud-U3x" id="3f3-tV-8bc">
@@ -161,6 +161,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="channelName" destination="MIF-jK-BWF" id="NIr-As-thG"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -185,6 +188,7 @@
                     </view>
                     <connections>
                         <outlet property="loginBtn" destination="l2I-iE-CQb" id="Omi-q7-Qqh"/>
+                        <outlet property="tableView" destination="MII-pV-MYT" id="8e2-3d-5TT"/>
                         <outlet property="userImage" destination="VoS-BQ-rMV" id="Mvl-va-xXH"/>
                         <segue destination="U0g-uv-6ln" kind="show" identifier="toLogin" id="Fyb-eR-wo9"/>
                     </connections>

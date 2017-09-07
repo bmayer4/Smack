@@ -69,10 +69,11 @@ class AvatarPickerVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         let spaceBtwnCells: CGFloat = 10
         let padding: CGFloat = 40 //20 on both sides
         //we're eliminating everything that is not a collection view cell
-        
+       
         //this gives us width of each individual cell
         let cellDimension = ((collectionView.bounds.width - padding) - (numOfColumns - 1) * spaceBtwnCells) / numOfColumns
-        
+        print("frame: \(collectionView.frame.width)")  //both 375 on 7 because collectionview is pinned to superview
+        print("bounds \(collectionView.bounds.width)")  //this would normally be smaller
         return CGSize(width: cellDimension, height: cellDimension)
         
     }
