@@ -56,6 +56,7 @@ class UserDataService {
         return color
     }
     
+    //called in 
     func logoutUser() {
         id = ""
         avatarColor = ""
@@ -66,6 +67,7 @@ class UserDataService {
         AuthService.instance.isLoggedIn = false
         AuthService.instance.userEmail = ""
         AuthService.instance.authToken = ""
+        MessageService.instance.clearChannels()
     }
     
     

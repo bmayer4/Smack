@@ -80,8 +80,6 @@ class AuthService {
         
         Alamofire.request(URL_LOGIN, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
             
-            
-        
                 if response.result.error == nil {
 
                   //**this is normal way to work with json data
@@ -103,8 +101,8 @@ class AuthService {
             self.userEmail = json["user"].stringValue  //this unwraps it for you, or sets it to empty string
             self.authToken = json["token"].stringValue
             
-                self.isLoggedIn = true
-                completion(true)
+            self.isLoggedIn = true
+            completion(true)
                 
             } else {
                 completion(false)
