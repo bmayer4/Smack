@@ -33,6 +33,17 @@ class ChannelVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             }
         }
         
+        //we are listening for new messages here also (ChatVC is), but we're interested in messages that come from channels
+        //that we do not have currently selected
+        SocketService.instance.getChatMessage { (newMessage) in
+            if newMessage.channelId != MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn {
+                
+                //now we have a channel that has some unread message inside of it
+                MessageService.instance.unreadChannels.append(newMessage.channelId) //will do work w this in ChannelCell
+                self.tableView.reloadData()
+            }
+        }
+        
     }
     
     //adding this in in case this view isn't instantiated whem ChatVC calls the notification
@@ -110,6 +121,18 @@ class ChannelVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let channel = MessageService.instance.channels[indexPath.row]
         MessageService.instance.selectedChannel = channel
+        
+        //When we click on a row, we are going to see if there are some unread messages, if there are, we will filter out the one we just clicked on, then we reload it, which will reload that row and now its not an unread channel so it wont be big, then we reselect it so we have our set selected fade on it
+        if MessageService.instance.unreadChannels.count > 0 {
+            MessageService.instance.unreadChannels = MessageService.instance.unreadChannels.filter{$0 != channel.id}
+        }
+        
+        let index = IndexPath(row: indexPath.row, section: 0)
+        tableView.reloadRows(at: [index], with: .none)
+        //now reselect the row, won't do a double select or anything
+        //doing ths because when we reload the row above for some reason it doesn't make cell selected for ChannelCell to know
+        tableView.selectRow(at: index, animated: false, scrollPosition: .none)
+        
         NotificationCenter.default.post(name: NOTIF_CHANNELS_SELECTED, object: nil)
         self.revealViewController().revealToggle(animated: true) //slides back and forth 
     }

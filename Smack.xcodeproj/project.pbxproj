@@ -35,6 +35,7 @@
 		75DD6F661F6174C900F9F45D /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD6F651F6174C900F9F45D /* SocketService.swift */; };
 		75DD6F681F624FDC00F9F45D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD6F671F624FDC00F9F45D /* Message.swift */; };
 		75DD6F6A1F62D28A00F9F45D /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD6F691F62D28A00F9F45D /* KeyboardBoundView.swift */; };
+		75DD6F6C1F632A7900F9F45D /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD6F6B1F632A7900F9F45D /* MessageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		75DD6F651F6174C900F9F45D /* SocketService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		75DD6F671F624FDC00F9F45D /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		75DD6F691F62D28A00F9F45D /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
+		75DD6F6B1F632A7900F9F45D /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		A0F306B25FDAF3041EB1F072 /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,6 +158,7 @@
 				75DD6F541F5C803000F9F45D /* CircleImage.swift */,
 				75DD6F5F1F60C1ED00F9F45D /* ChannelCell.swift */,
 				75DD6F691F62D28A00F9F45D /* KeyboardBoundView.swift */,
+				75DD6F6B1F632A7900F9F45D /* MessageCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				75DD6F601F60C1ED00F9F45D /* ChannelCell.swift in Sources */,
 				75DD6F3A1F564EB600F9F45D /* ChatVC.swift in Sources */,
 				75DD6F511F5B9D3B00F9F45D /* AvatarPickerVC.swift in Sources */,
+				75DD6F6C1F632A7900F9F45D /* MessageCell.swift in Sources */,
 				75DD6F4D1F5A5A8C00F9F45D /* RoundedButton.swift in Sources */,
 				75DD6F681F624FDC00F9F45D /* Message.swift in Sources */,
 				75DD6F5E1F5EEBED00F9F45D /* Channel.swift in Sources */,
