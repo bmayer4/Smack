@@ -22,7 +22,6 @@ class AddChannelVC: UIViewController {
         setupView()
     }
 
-
     @IBAction func createChannelPressed(_ sender: Any) {
         guard let channelName = nameTxt.text, channelName != "" else { return }
         guard let channelDesc = chanDesc.text else { return }

@@ -39,7 +39,7 @@ class RoundedButton: UIButton {
     
     
     
-    //this is what I like the best
+    //this is what I like the best, clipsToBounds must be checked, or added in code
     //**USE THIS WAY WITHOUT @IBInspectable, but with @IBDesignable
 //        override func awakeFromNib() {
 //            super.awakeFromNib()
